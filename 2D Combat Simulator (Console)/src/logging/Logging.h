@@ -17,6 +17,6 @@ public:
 	Logging();
 	~Logging();
 
-	static void Log(conststr msg, Logstream stream);
+	static void Log(conststr msg, Logstream stream = Logstream::PRINT);
 };
 

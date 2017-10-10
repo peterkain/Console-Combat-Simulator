@@ -126,16 +126,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\maths\Random.cpp" />
+    <ClCompile Include="src\game_objects\Army.cpp" />
+    <ClCompile Include="src\game_objects\Soldier.cpp" />
     <ClCompile Include="src\application\Application.cpp" />
     <ClCompile Include="src\logging\Logging.cpp" />
     <ClCompile Include="src\file_handling\File.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\maths\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\maths\Random.h" />
+    <ClInclude Include="src\game_objects\Army.h" />
+    <ClInclude Include="src\game_objects\Soldier.h" />
     <ClInclude Include="src\application\Application.h" />
     <ClInclude Include="src\logging\Logging.h" />
     <ClInclude Include="src\Definitions.h" />
     <ClInclude Include="src\file_handling\File.h" />
+    <ClInclude Include="src\maths\Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="maps\Map1.map" />

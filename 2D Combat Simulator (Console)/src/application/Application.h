@@ -16,6 +16,7 @@ public:
 private:
 	void Gameloop();
 	void LoadLevels();
+	void InitLevels();
 
 private:
 	std::vector<File> vMaps;
