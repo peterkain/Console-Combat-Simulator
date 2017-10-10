@@ -30,7 +30,7 @@ int main()
 		cout << "Exiting because of the following Error: \n\t";
 		cout << e.what();
 
-		//TWO TIMES, BECAUSE OF PRINTED NEWLINE (e.what())
+		//TWO TIMES, BECAUSE OF SPARE NEWLINE, MAKING cin.get() UNABLE TO WORK
 		cin.get();
 
 		return EXIT_FAILURE;
