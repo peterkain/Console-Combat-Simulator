@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits>
 #include "application/Application.h"
 #include "logging\Logging.h"
 
