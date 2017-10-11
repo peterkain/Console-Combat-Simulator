@@ -1,5 +1,6 @@
 #pragma once
 #include "../Definitions.h"
+#include <vector>
 
 class File
 {
@@ -8,11 +9,11 @@ public:
 	~File();
 
 	void Read();
-	std::string GetContents();
-	std::string& GetContentsAsRef();
+	std::vector<std::string> GetContents();
+	std::vector<std::string>& GetContentsAsRef();
 
 private:
 	std::string Filename;
-	std::string Contents;
+	std::vector<std::string> Contents;
 };
 

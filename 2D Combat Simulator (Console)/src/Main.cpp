@@ -13,12 +13,10 @@ public:
 	{ 
 		cin.get(); 
 	}
-};
+} run;
 
 int main()
 {
-	Run run;
-
 	try
 	{
 		Application Game;

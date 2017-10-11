@@ -56,3 +56,11 @@ int Soldier::Defense() const
 {
 	return iDefense;
 }
+
+
+
+std::ostream& operator<<(std::ostream& stream, const Soldier& soldier)
+{
+	stream << soldier.iHealth << " | " << soldier.iAttack << " | " << soldier.iDefense;
+	return stream;
+}

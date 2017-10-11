@@ -49,27 +49,27 @@ File::~File()
 void File::Read()
 {
 	std::ifstream file{Filename};
+	std::string line {};
 
 	if(!file)
 	{
 		Logging::Log("File " + Filename + " does not exist!", Logstream::ERROR);
 	}
 
-	std::stringstream ss {};
-	ss << file.rdbuf();
-	file.close();
-
-	Contents = ss.str();
+	while(getline(file, line))
+	{
+		Contents.push_back(line);
+	}
 }
 
 
-std::string File::GetContents()
+std::vector<std::string> File::GetContents()
 {
 	return Contents;
 }
 
 
-std::string& File::GetContentsAsRef()
+std::vector<std::string>& File::GetContentsAsRef()
 {
 	return Contents;
 }

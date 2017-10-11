@@ -18,6 +18,8 @@ public:
 	int Attack() const;
 	int Defense() const;
 
+	friend std::ostream& operator<<(std::ostream& stream, const Soldier& soldier);
+
 private:
 	char cSign;
 	Vector2 vec2Position;
