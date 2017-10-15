@@ -16,7 +16,7 @@ Random::~Random()
 
 constint32 Random::Between(constint32 min, constint32 max)
 {
-	uint seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+	uint seed = static_cast<uint>(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 	std::mt19937 RandomEngine {seed};
 
 	std::uniform_int_distribution<int> range {min, max};

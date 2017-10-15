@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "../game_objects/Soldier.h"
 #include "../logging/Logging.h"
+#include <iterator>
 
 
 Application::Application()
@@ -38,26 +39,43 @@ void Application::LoadLevels()
 void Application::InitLevels()
 {
 
-	for(short i = 0; i < vMaps.size(); i++)
+	for(ushort i = 0; i < vMaps.size(); i++)
 	{
 		FileContents.push_back(vMaps[i].GetContents());
 	}
 
 	std::vector<char> SignsUsed{};
+	SignsUsed.reserve(sizeof(short) * 8);
+
 	for(std::vector<std::string> s : FileContents)
 	{
-		for(int i = 0; i < s.size(); i++)
+		for(int32_t i = 0; (uint)i < s.size(); i++)
 		{
-			for(int j = 0; j < s[i].length(); j++)
+			for(int32_t j = 0; (uint)j < s[i].length(); j++)
 			{
-				if(std::any_of(SignsUsed.begin(), SignsUsed.end(), [=](char c) { return c != s[i][j]; }))
+				auto value = std::find(SignsUsed.begin(), SignsUsed.end(), s[i][j]);
+				auto position = std::distance(SignsUsed.begin(), value);
+				if(value != SignsUsed.end())
 				{
-					if(s[i][j] != ' ' && s[i][j] != '#'
+					Soldiers.emplace_back(SignsUsed[position], Vector2{i, j}, 
+						[&] () -> Army
+						{
+							for(const Soldier& s : Soldiers)
+							{
+								if(s.Sign() == SignsUsed[position])
+								{
+									return s.GetArmy();
+								} else continue;
+							}
+						} ()
+					);
+				}
+				else 
+				{
+					if(s[i][j] != ' ' && s[i][j] != '#')
 					{
-						Soldier General(s[i][j], {i, j}, {});
-						Generals.push_back(General);
+						Soldiers.emplace_back(s[i][j], Vector2{i, j}, Army{});
 						SignsUsed.push_back(s[i][j]);
-						std::cout << General << std::endl;
 					}
 				}
 			}

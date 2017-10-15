@@ -11,7 +11,7 @@ Logging::~Logging()
 }
 
 
-void Logging::Log(conststr msg, Logstream stream)
+void Logging::Log(conststr_ref msg, Logstream stream)
 {
 	std::string status {""};
 

@@ -2,7 +2,7 @@
 #include "../logging/Logging.h"
 
 
-Vector2::Vector2(constint32 xpos, constint32 ypos)
+Vector2::Vector2(int_ref xpos, int_ref ypos)
 	:	iX{xpos}
 	,	iY{ypos}
 {
@@ -32,13 +32,13 @@ Vector2 Vector2::Sub(const Vector2& other)
 }
 
 
-constint32 Vector2::X() const 
+int32_t Vector2::X() const 
 {
 	return iX;
 }
 
 
-constint32 Vector2::Y() const 
+int32_t Vector2::Y() const 
 {
 	return iY;
 }

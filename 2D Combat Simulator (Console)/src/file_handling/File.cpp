@@ -4,7 +4,7 @@
 #include <sstream>
 
 
-File::File(conststr filename)
+File::File(conststr_ref filename)
 	:	Filename{filename}
 {
 	std::ifstream file{Filename};

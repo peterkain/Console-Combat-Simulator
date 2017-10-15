@@ -7,10 +7,11 @@
 class Soldier
 {
 public:
-	Soldier(constchar sign, Vector2 position, Army army);
+	Soldier(constchar_ref sign, Vector2 position, Army army);
 	~Soldier();
 
 	short ArmyID() const;
+	Army GetArmy() const;
 	Vector2 Position() const;
 	char Sign() const;
 

@@ -5,11 +5,11 @@
 class Vector2
 {
 public:
-	Vector2(constint32 xpos, constint32 ypos);
+	Vector2(int_ref xpos, int_ref ypos);
 	~Vector2();
 
-	constint32 X() const;
-	constint32 Y() const;
+	int32_t X() const;
+	int32_t Y() const;
 
 	Vector2 Add(const Vector2& other);
 	Vector2 Sub(const Vector2& other);

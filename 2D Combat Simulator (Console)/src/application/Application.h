@@ -22,6 +22,6 @@ private:
 private:
 	std::vector<File> vMaps;
 	std::vector<std::vector<std::string>> FileContents;
-	std::vector<Soldier> Generals;
+	std::vector<Soldier> Soldiers;
 };
 

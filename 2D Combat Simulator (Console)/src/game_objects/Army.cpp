@@ -19,7 +19,7 @@ Army::Army()
 		ID = Random::Between(_MIN_, _MAX_);
 	}
 
-	for(short i = 0; i < IDs.size(); i++)
+	for(ushort i = 0; i < IDs.size(); i++)
 	{
 		if(IDs[i] == 0)
 		{

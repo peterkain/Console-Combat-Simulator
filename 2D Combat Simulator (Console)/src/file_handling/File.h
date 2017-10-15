@@ -5,7 +5,7 @@
 class File
 {
 public:
-	File(conststr filename);
+	File(conststr_ref filename);
 	~File();
 
 	void Read();

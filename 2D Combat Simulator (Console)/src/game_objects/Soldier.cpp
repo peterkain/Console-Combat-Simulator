@@ -2,7 +2,7 @@
 
 
 
-Soldier::Soldier(constchar sign, Vector2 position, Army army)
+Soldier::Soldier(constchar_ref sign, Vector2 position, Army army)
 	:	cSign{sign}
 	,	vec2Position{position}
 	,	army{army}
@@ -25,6 +25,12 @@ Soldier::~Soldier()
 short Soldier::ArmyID() const
 {
 	return army.GetID();
+}
+
+
+Army Soldier::GetArmy() const
+{
+	return army;
 }
 
 
